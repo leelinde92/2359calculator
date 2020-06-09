@@ -1,4 +1,4 @@
-#2359 Calculator Project
+# 2359 Calculator Project
 ### Project specifications
 ##### Requirements
 - [x] Use the latest expo to create the project
@@ -13,7 +13,7 @@
 - [ ] Use regex
 - [ ] More than 80% test coverage
 
-###My approach
+### My approach
 - Observe that it's a scientific calculator with arithmetic rules
 - Note that there's no requirement to show statement before evaluation, but show it anyway.
 - Begin from UI, then tackle business logic.
