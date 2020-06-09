@@ -4,6 +4,7 @@ import {
   Text,
   Platform,
   TouchableHighlight,
+  View,
 } from "react-native";
 import PropTypes from "prop-types";
 import styles from "../styles";
@@ -17,14 +18,16 @@ const Button = memo(({ value }) => {
         style={styles.button}
         onPress={() => onPress(value)}
       >
-        <Text>{value}</Text>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>{value}</Text>
+        </View>
       </TouchableNativeFeedback>
     );
   }
 
   return (
-    <TouchableHighlight onPress={() => onPress(value)}>
-      <Text>{value}</Text>
+    <TouchableHighlight style={styles.button} onPress={() => onPress(value)}>
+      <Text style={styles.buttonText}>{value}</Text>
     </TouchableHighlight>
   );
 });
