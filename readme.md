@@ -1,4 +1,5 @@
 #2359 Calculator Project
+### Project specifications
 ##### Requirements
 - [ ] Use the latest expo to create the project
 - [ ] Use redux
@@ -11,3 +12,8 @@
 - [ ] Each file is less than 60 lines
 - [ ] Use regex
 - [ ] More than 80% test coverage
+
+###My approach
+- Observe that it's a scientific calculator with arithmetic rules
+- Note that there's no requirement to show statement before evaluation, but show it anyway.
+- Begin from UI, then tackle business logic.
