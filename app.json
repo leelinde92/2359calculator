@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "calculator",
+    "name": "2359 Calculator",
     "slug": "calculator",
     "platforms": [
       "ios",
@@ -13,7 +13,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#FFFFFF"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

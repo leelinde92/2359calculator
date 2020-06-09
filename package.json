@@ -12,11 +12,27 @@
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
-    "react-native-web": "~0.11.7"
+    "react-native-web": "~0.11.7",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@react-native-community/eslint-config": "^2.0.0",
     "babel-preset-expo": "~8.1.0",
-    "@babel/core": "^7.8.6"
+    "eslint": "^7.2.0",
+    "prettier": "^2.0.5",
+    "prop-types": "^15.7.2"
+  },
+  "eslintConfig": {
+    "extends": "@react-native-community",
+    "rules": {
+      "linebreak-style": 0,
+      "quotes": [
+        "error",
+        "double"
+      ]
+    }
   },
   "private": true
 }

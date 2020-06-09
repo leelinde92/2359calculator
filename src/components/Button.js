@@ -1,13 +1,22 @@
-import React, { memo } from 'react';
-import { TouchableNativeFeedback, Text, Platform } from 'react-native';
-import PropTypes from 'prop-types';
-import TouchableHighlight
-  from 'react-native-web/dist/exports/TouchableHighlight';
+import React, { memo } from "react";
+import {
+  TouchableNativeFeedback,
+  Text,
+  Platform,
+  TouchableHighlight,
+} from "react-native";
+import PropTypes from "prop-types";
+import styles from "../styles";
 
-const Button = memo(({ onPress, value }) => {
-  if (Platform.OS === 'android') {
+const Button = memo(({ value }) => {
+  const onPress = () => {};
+
+  if (Platform.OS === "android") {
     return (
-      <TouchableNativeFeedback onPress={() => onPress(value)}>
+      <TouchableNativeFeedback
+        style={styles.button}
+        onPress={() => onPress(value)}
+      >
         <Text>{value}</Text>
       </TouchableNativeFeedback>
     );
