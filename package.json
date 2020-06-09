@@ -28,7 +28,7 @@
   "eslintConfig": {
     "extends": "@react-native-community",
     "rules": {
-      "linebreak-style": 0,
+      "linebreak-style": "off",
       "quotes": [
         "error",
         "double"

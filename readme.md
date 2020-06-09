@@ -1,11 +1,11 @@
 #2359 Calculator Project
 ### Project specifications
 ##### Requirements
-- [ ] Use the latest expo to create the project
-- [ ] Use redux
-- [ ] `src` should only contain the following files. `constants.js, actions.js, reducer.js, Button.js, Screen.js, styles.js`
+- [x] Use the latest expo to create the project
+- [ ] Use Redux
+- [x] `src` should only contain the following files. `constants.js, actions.js, reducer.js, Button.js, Screen.js, styles.js`
 - [x] Write styles.js without width / height key
-- [ ] Write Button.js as React.memo without equal function and make sure it’s not rerender
+- [x] Write Button.js as React.memo without equal function and make sure it’s not re-rendering
 - [ ] Pass given test case `1 + 2 - 3 * 4 = -9`
 
 ##### Bonus points
