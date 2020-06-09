@@ -12,10 +12,10 @@ const Screen = () => {
   return (
     <View style={styles.display}>
       <View style={styles.expression}>
-        <Text>Expression</Text>
+        <Text style={styles.expressionText}>Expression</Text>
       </View>
       <View style={styles.entry}>
-        <Text>Entry</Text>
+        <Text style={styles.entryText}>Entry</Text>
       </View>
     </View>
   );

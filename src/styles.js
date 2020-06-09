@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform, StatusBar } from "react-native";
 
 const styles = StyleSheet.create({
   buttons: {
@@ -25,13 +25,25 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   display: {
     flex: 1,
+    padding: 8,
   },
-  expression: {},
+  expression: {
+    alignItems: "flex-end",
+  },
+  expressionText: {
+    color: "#AAAAAA",
+  },
   entry: {
     flex: 1,
+    alignItems: "flex-end",
+    justifyContent: "flex-end",
+  },
+  entryText: {
+    fontSize: 72,
   },
   row: {
     flex: 1,
