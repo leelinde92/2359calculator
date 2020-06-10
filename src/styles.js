@@ -29,6 +29,11 @@ const styles = StyleSheet.create({
   },
   display: {
     flex: 1,
+    overflow: "hidden",
+    position: "relative",
+  },
+  displayContainer: {
+    flex: 1,
     padding: 8,
   },
   expression: {
@@ -48,6 +53,11 @@ const styles = StyleSheet.create({
   row: {
     flex: 1,
     flexDirection: "row",
+  },
+  numpad: {
+    flex: 1,
+    flexDirection: "row",
+    backgroundColor: "#FFFFFF",
   },
 });
 
