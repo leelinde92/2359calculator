@@ -7,10 +7,13 @@ import {
   View,
 } from "react-native";
 import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import { calculatorButtonPressed } from "../providers/redux/actions";
 import styles from "../styles";
 
 const Button = memo(({ value }) => {
-  const onPress = () => {};
+  const dispatch = useDispatch();
+  const onPress = () => dispatch(calculatorButtonPressed(value));
 
   if (Platform.OS === "android") {
     return (
@@ -36,4 +39,4 @@ Button.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
-export default memo(Button);
+export default Button;
