@@ -206,6 +206,66 @@ describe("calculator reducer", () => {
     });
   });
 
+  it("should add leading 0 for decimal", () => {
+    expect(
+      calculatorReducer(
+        {
+          evaluated: false,
+          expression: "",
+          entry: "0",
+        },
+        {
+          type: actions.CALCULATOR.ENTRY,
+          payload: ".",
+        }
+      )
+    ).toEqual({
+      evaluated: false,
+      expression: "",
+      entry: "0.",
+    });
+  });
+
+  it("should ignore decimal if exists", () => {
+    expect(
+      calculatorReducer(
+        {
+          evaluated: false,
+          expression: "",
+          entry: "0.998",
+        },
+        {
+          type: actions.CALCULATOR.ENTRY,
+          payload: ".",
+        }
+      )
+    ).toEqual({
+      evaluated: false,
+      expression: "",
+      entry: "0.998",
+    });
+  });
+
+  it("should not ignore decimal if doesn't exists", () => {
+    expect(
+      calculatorReducer(
+        {
+          evaluated: false,
+          expression: "",
+          entry: "998",
+        },
+        {
+          type: actions.CALCULATOR.ENTRY,
+          payload: ".",
+        }
+      )
+    ).toEqual({
+      evaluated: false,
+      expression: "",
+      entry: "998.",
+    });
+  });
+
   describe("evaluation test cases", () => {
     it("1 + 2 - 3 * 4", () => {
       expect(

@@ -135,7 +135,11 @@ const calculatorReducer = (state = initialState, action) => {
         };
       }
 
-      if (state.entry === "0") {
+      if (action.payload === "." && state.entry.includes(".")) {
+        return state;
+      }
+
+      if (state.entry === "0" && action.payload !== ".") {
         return {
           ...state,
           entry: `${action.payload}`,
