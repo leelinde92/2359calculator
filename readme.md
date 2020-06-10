@@ -23,9 +23,10 @@ Enter the command `yarn test --coverage` in the terminal to run tests with cover
 ##### Bonus points
 - [ ] Each file is less than 60 lines
 - [x] Use regex
-- [ ] More than 80% test coverage
+- [x] More than 80% test coverage
 
 ##### Foot note
 - Reducer is larger than 60 lines, due to the calculations needed.
 - Button has reduced coverage due to platform specific executions.
 - `jest-expo` can cover more platforms, but it does not allow for inflating like `enzyme`. `App.test.js` integration test is deemed as important to keep application integrity and hence I've decided to go with `enzyme` instead.
+- In `setUp.js`, lines starting with `Warning: ` are suppressed due to a lack of support for React Native on Enzyme. The checks are for HTML elements and is too noisy in the console.
