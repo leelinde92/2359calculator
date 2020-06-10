@@ -6,12 +6,58 @@ const initialState = {
   entry: "0",
 };
 
+const replaceEvaluatedNumber = (evalArray, index, number) => {
+  evalArray[index - 1] = null;
+  evalArray[index] = null;
+  evalArray[index + 1] = number;
+};
+
 const evaluateExpression = (expression) => {
-  const evaluations = expression.split(" ");
-  console.log(evaluations);
-  // TODO: Loop through and evaluate multiplications and divisons first
-  // TODO: Loop through and evaluate additions and subtractions
-  return "NaN";
+  let evaluations = expression.split(" ");
+  evaluations.forEach((char, index) => {
+    switch (char) {
+      case "*":
+        replaceEvaluatedNumber(
+          evaluations,
+          index,
+          parseFloat(evaluations[index - 1]) *
+            parseFloat(evaluations[index + 1])
+        );
+        break;
+      case "/":
+        replaceEvaluatedNumber(
+          evaluations,
+          index,
+          parseFloat(evaluations[index - 1]) *
+            parseFloat(evaluations[index + 1])
+        );
+        break;
+    }
+  });
+
+  evaluations = evaluations.filter((char) => char !== null);
+  evaluations.forEach((char, index) => {
+    switch (char) {
+      case "+":
+        replaceEvaluatedNumber(
+          evaluations,
+          index,
+          parseFloat(evaluations[index - 1]) +
+            parseFloat(evaluations[index + 1])
+        );
+        break;
+      case "-":
+        replaceEvaluatedNumber(
+          evaluations,
+          index,
+          parseFloat(evaluations[index - 1]) -
+            parseFloat(evaluations[index + 1])
+        );
+        break;
+    }
+  });
+
+  return evaluations[evaluations.length - 1];
 };
 
 const appendTrailingDecimal = (entry) => {
@@ -27,7 +73,10 @@ const calculatorReducer = (state = initialState, action) => {
     case actions.CALCULATOR.EXPRESSION:
       if (state.evaluated) {
         return {
-          ...initialState,
+          ...state,
+          evaluated: false,
+          expression: `${state.entry} ${action.payload}`,
+          entry: "0",
         };
       }
 
@@ -38,7 +87,7 @@ const calculatorReducer = (state = initialState, action) => {
       const newExpression = `${appendTrailingDecimal(state.entry)} ${
         action.payload
       }`;
-      console.log(newExpression);
+
       return {
         ...state,
         evaluated: false,
@@ -53,6 +102,10 @@ const calculatorReducer = (state = initialState, action) => {
         ...initialState,
       };
     case actions.CALCULATOR.EVAL:
+      if (state.evaluated) {
+        return state;
+      }
+
       const finalExpression = `${state.expression} ${appendTrailingDecimal(
         state.entry
       )}`;
