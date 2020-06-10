@@ -25,6 +25,15 @@ global.navigator = {
 };
 copyProps(window, global);
 
+const originalConsoleError = console.error;
+console.error = (message) => {
+  if (message.startsWith("Warning:")) {
+    return;
+  }
+
+  originalConsoleError(message);
+};
+
 /**
  * Set up Enzyme to mount to DOM, simulate events,
  * and inspect the DOM in tests.

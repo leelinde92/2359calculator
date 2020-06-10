@@ -68,6 +68,26 @@ describe("calculator reducer", () => {
     });
   });
 
+  it("should append trailing 0 after decimal", () => {
+    expect(
+      calculatorReducer(
+        {
+          evaluated: false,
+          expression: "",
+          entry: "15.",
+        },
+        {
+          type: actions.CALCULATOR.EXPRESSION,
+          payload: "*",
+        }
+      )
+    ).toEqual({
+      evaluated: false,
+      expression: "15.0 *",
+      entry: "0",
+    });
+  });
+
   it("should evaluate statement", () => {
     expect(
       calculatorReducer(
@@ -84,6 +104,85 @@ describe("calculator reducer", () => {
       evaluated: true,
       expression: "1 + 2 - 3 * 4 =",
       entry: -9,
+    });
+  });
+
+  it("should do nothing if state is evaluated", () => {
+    expect(
+      calculatorReducer(
+        {
+          evaluated: true,
+          expression: "1 + 2 - 3 * 4 =",
+          entry: -9,
+        },
+        {
+          type: actions.CALCULATOR.EVAL,
+        }
+      )
+    ).toEqual({
+      evaluated: true,
+      expression: "1 + 2 - 3 * 4 =",
+      entry: -9,
+    });
+  });
+
+  it("should replace entry with new entry value after evaluation", () => {
+    expect(
+      calculatorReducer(
+        {
+          evaluated: true,
+          expression: "1 + 2 - 3 * 4 =",
+          entry: -9,
+        },
+        {
+          type: actions.CALCULATOR.ENTRY,
+          payload: 3,
+        }
+      )
+    ).toEqual({
+      evaluated: false,
+      expression: "",
+      entry: "3",
+    });
+  });
+
+  it("should append to entry", () => {
+    expect(
+      calculatorReducer(
+        {
+          evaluated: false,
+          expression: "",
+          entry: "9",
+        },
+        {
+          type: actions.CALCULATOR.ENTRY,
+          payload: "3",
+        }
+      )
+    ).toEqual({
+      evaluated: false,
+      expression: "",
+      entry: "93",
+    });
+  });
+
+  it("should use evaluated value for new expression", () => {
+    expect(
+      calculatorReducer(
+        {
+          evaluated: true,
+          expression: "1 + 2 - 3 * 4 =",
+          entry: -9,
+        },
+        {
+          type: actions.CALCULATOR.EXPRESSION,
+          payload: "*",
+        }
+      )
+    ).toEqual({
+      evaluated: false,
+      expression: "-9 *",
+      entry: "0",
     });
   });
 
