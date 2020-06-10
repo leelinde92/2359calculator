@@ -80,6 +80,16 @@ const calculatorReducer = (state = initialState, action) => {
         };
       }
 
+      const lastChar = state.expression.length - 1;
+      if (state.expression.charAt(lastChar).match(/[+\-*/]/)) {
+        return {
+          ...state,
+          expression: `${state.expression.substr(0, lastChar)}${
+            action.payload
+          }`,
+        };
+      }
+
       if (state.entry === "0") {
         return state;
       }
@@ -119,13 +129,24 @@ const calculatorReducer = (state = initialState, action) => {
       };
     case actions.CALCULATOR.ENTRY:
       if (state.evaluated) {
+        if (action.payload === ".") {
+          return {
+            ...initialState,
+            entry: `0${action.payload}`,
+          };
+        }
+
         return {
           ...initialState,
           entry: `${action.payload}`,
         };
       }
 
-      if (state.entry === "0") {
+      if (action.payload === "." && state.entry.includes(".")) {
+        return state;
+      }
+
+      if (state.entry === "0" && action.payload !== ".") {
         return {
           ...state,
           entry: `${action.payload}`,

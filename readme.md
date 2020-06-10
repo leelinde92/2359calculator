@@ -2,16 +2,21 @@
 ![https://github.com/leelinde92/2359calculator/](https://github.com/leelinde92/2359calculator/raw/master/coverage/badge.svg)
 
 ### How to use this readme
-In the first section, I've detailed the approach I took to this project. You can find the project specifications derived below and the points that have been completed.
+In the first section, I've detailed the approach I took to this project. You can find the project specifications derived below, and the points that have been completed.
 
 #### Running tests
 Enter the command `yarn test --coverage` in the terminal to run tests with coverage. 
 
 ### My approach
-- Observe that it's a scientific calculator with arithmetic rules
-- Note that there's no requirement to show statement before evaluation, but show it anyway.
-- Due to size of the feature, not much to do. To demonstrate my understanding of Gitflow workflow, I have broken the feature down by individual tasks. Beginning from UI, then tackle business logic.
-- Assume the test includes creating a function for evaluating expressions, not using `eval`.
+The first thing I observed is the test case resolves based on arithmetic rules. Some basic calculators do not resolve as such, and thus evaluates every new number entered with the previous arithmetic operation, and displays to the user on the screen. I've chosen to show the current math expression created so that the user can check easily. 
+
+Due to size of the feature, there isn't much to do. In order to demonstrate my understanding of Agile workflow, I've broken the individual tasks into "features".
+ 
+As for my understanding of Gitflow workflow, I've created a release branch `release/1.0.0` to make a new release from `develop` to `master`. I've also created a number of branches (which you can find in this project) to build the features required.
+
+Since this is a test to evaluate my abilities, I avoided using the built-in `eval` function and chose to build my own function to resolve arithmetic equations.
+
+Personally, I like to isolate business logic with [Redux Saga](https://redux-saga.js.org/). Sagas can access reducer values, hence relegating actions to take inputs and reducers to storing values. Moreover, the ability to mock certain calls within Sagas and the ability to trigger side effects makes a great case for testing and re-usability.
 
 ### Project specifications
 ##### Requirements

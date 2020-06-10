@@ -186,6 +186,106 @@ describe("calculator reducer", () => {
     });
   });
 
+  it("should replace last operator with new operator pressed", () => {
+    expect(
+      calculatorReducer(
+        {
+          evaluated: false,
+          expression: "1 + 2 -",
+          entry: "0",
+        },
+        {
+          type: actions.CALCULATOR.EXPRESSION,
+          payload: "*",
+        }
+      )
+    ).toEqual({
+      evaluated: false,
+      expression: "1 + 2 *",
+      entry: "0",
+    });
+  });
+
+  it("should add leading 0 for decimal", () => {
+    expect(
+      calculatorReducer(
+        {
+          evaluated: false,
+          expression: "",
+          entry: "0",
+        },
+        {
+          type: actions.CALCULATOR.ENTRY,
+          payload: ".",
+        }
+      )
+    ).toEqual({
+      evaluated: false,
+      expression: "",
+      entry: "0.",
+    });
+  });
+
+  it("should ignore decimal if exists", () => {
+    expect(
+      calculatorReducer(
+        {
+          evaluated: false,
+          expression: "",
+          entry: "0.998",
+        },
+        {
+          type: actions.CALCULATOR.ENTRY,
+          payload: ".",
+        }
+      )
+    ).toEqual({
+      evaluated: false,
+      expression: "",
+      entry: "0.998",
+    });
+  });
+
+  it("should not ignore decimal if doesn't exists", () => {
+    expect(
+      calculatorReducer(
+        {
+          evaluated: false,
+          expression: "",
+          entry: "998",
+        },
+        {
+          type: actions.CALCULATOR.ENTRY,
+          payload: ".",
+        }
+      )
+    ).toEqual({
+      evaluated: false,
+      expression: "",
+      entry: "998.",
+    });
+  });
+
+  it("should appending leading 0 when pressing decimal after evaluation", () => {
+    expect(
+      calculatorReducer(
+        {
+          evaluated: true,
+          expression: "900 + 90 =",
+          entry: "998",
+        },
+        {
+          type: actions.CALCULATOR.ENTRY,
+          payload: ".",
+        }
+      )
+    ).toEqual({
+      evaluated: false,
+      expression: "",
+      entry: "0.",
+    });
+  });
+
   describe("evaluation test cases", () => {
     it("1 + 2 - 3 * 4", () => {
       expect(
