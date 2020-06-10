@@ -16,4 +16,4 @@
 ### My approach
 - Observe that it's a scientific calculator with arithmetic rules
 - Note that there's no requirement to show statement before evaluation, but show it anyway.
-- Begin from UI, then tackle business logic.
+- Due to size of the feature, not much to do. To demonstrate my understanding of Gitflow workflow, the feature is broken down by individual tasks. Beginning from UI, then tackle business logic.
