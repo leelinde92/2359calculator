@@ -2,15 +2,15 @@
 ### Project specifications
 ##### Requirements
 - [x] Use the latest expo to create the project
-- [ ] Use Redux
+- [x] Use Redux
 - [x] `src` should only contain the following files. `constants.js, actions.js, reducer.js, Button.js, Screen.js, styles.js`
 - [x] Write styles.js without width / height key
 - [x] Write Button.js as React.memo without equal function and make sure it’s not re-rendering
-- [ ] Pass given test case `1 + 2 - 3 * 4 = -9`
+- [x] Pass given test case `1 + 2 - 3 * 4 = -9`
 
 ##### Bonus points
-- [ ] Each file is less than 60 lines
-- [ ] Use regex
+- [ ] Each file is less than 60 lines (Reducer exceeds this limit)
+- [x] Use regex
 - [ ] More than 80% test coverage
 
 ### My approach
