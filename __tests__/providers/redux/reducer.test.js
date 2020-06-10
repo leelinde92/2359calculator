@@ -186,6 +186,26 @@ describe("calculator reducer", () => {
     });
   });
 
+  it("should replace last operator with new operator pressed", () => {
+    expect(
+      calculatorReducer(
+        {
+          evaluated: false,
+          expression: "1 + 2 -",
+          entry: "0",
+        },
+        {
+          type: actions.CALCULATOR.EXPRESSION,
+          payload: "*",
+        }
+      )
+    ).toEqual({
+      evaluated: false,
+      expression: "1 + 2 *",
+      entry: "0",
+    });
+  });
+
   describe("evaluation test cases", () => {
     it("1 + 2 - 3 * 4", () => {
       expect(

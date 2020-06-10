@@ -80,6 +80,16 @@ const calculatorReducer = (state = initialState, action) => {
         };
       }
 
+      const lastChar = state.expression.length - 1;
+      if (state.expression.charAt(lastChar).match(/[+\-*/]/)) {
+        return {
+          ...state,
+          expression: `${state.expression.substr(0, lastChar)}${
+            action.payload
+          }`,
+        };
+      }
+
       if (state.entry === "0") {
         return state;
       }
