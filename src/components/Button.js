@@ -11,9 +11,14 @@ import { useDispatch } from "react-redux";
 import { calculatorButtonPressed } from "../providers/redux/actions";
 import styles from "../styles";
 
-const Button = memo(({ value }) => {
+const Button = memo(({ onPress: onPressComponent, value }) => {
   const dispatch = useDispatch();
-  const onPress = () => dispatch(calculatorButtonPressed(value));
+  const onPress = () => {
+    if (onPressComponent) {
+      onPressComponent();
+    }
+    dispatch(calculatorButtonPressed(value));
+  };
 
   if (Platform.OS === "android") {
     return (
@@ -35,7 +40,12 @@ const Button = memo(({ value }) => {
   );
 });
 
+Button.defaultProps = {
+  onPress: null,
+};
+
 Button.propTypes = {
+  onPress: PropTypes.func,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
