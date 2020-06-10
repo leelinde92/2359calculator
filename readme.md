@@ -2,6 +2,9 @@
 ### How to use this readme
 In the first section, I've detailed the approach I took to this project. You can find the project specifications derived below and the points that have been completed.
 
+#### Running tests
+Enter the command `yarn test --coverage` in the terminal to run tests with coverage. 
+
 ### My approach
 - Observe that it's a scientific calculator with arithmetic rules
 - Note that there's no requirement to show statement before evaluation, but show it anyway.

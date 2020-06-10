@@ -28,7 +28,7 @@ const evaluateExpression = (expression) => {
         replaceEvaluatedNumber(
           evaluations,
           index,
-          parseFloat(evaluations[index - 1]) *
+          parseFloat(evaluations[index - 1]) /
             parseFloat(evaluations[index + 1])
         );
         break;
