@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
   },
   expressionText: {
+    fontSize: 40,
     color: "#AAAAAA",
   },
   entry: {
