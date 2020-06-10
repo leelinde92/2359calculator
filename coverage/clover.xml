@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1591794364057" clover="3.2.0">
+  <project timestamp="1591794364057" name="All files">
+    <metrics statements="69" coveredstatements="67" conditionals="38" coveredconditionals="35" methods="15" coveredmethods="14" elements="122" coveredelements="116" complexity="0" loc="69" ncloc="69" packages="4" files="6" classes="6"/>
+    <package name="calculator">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="App.js" path="C:\Users\leeli\Codebase\React Native\calculator\App.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="calculator.src">
+      <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
+      <file name="styles.js" path="C:\Users\leeli\Codebase\React Native\calculator\src\styles.js">
+        <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
+        <line num="3" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="calculator.src.components">
+      <metrics statements="12" coveredstatements="10" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="5"/>
+      <file name="Button.js" path="C:\Users\leeli\Codebase\React Native\calculator\src\components\Button.js">
+        <metrics statements="9" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="3"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="21" type="stmt"/>
+        <line num="16" count="21" type="stmt"/>
+        <line num="18" count="21" type="cond" truecount="1" falsecount="1"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="31" count="21" type="stmt"/>
+        <line num="32" count="3" type="stmt"/>
+        <line num="38" count="2" type="stmt"/>
+      </file>
+      <file name="Screen.js" path="C:\Users\leeli\Codebase\React Native\calculator\src\components\Screen.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="11" type="stmt"/>
+        <line num="12" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="calculator.src.providers.redux">
+      <metrics statements="54" coveredstatements="54" conditionals="34" coveredconditionals="33" methods="8" coveredmethods="8"/>
+      <file name="actions.js" path="C:\Users\leeli\Codebase\React Native\calculator\src\providers\redux\actions.js">
+        <metrics statements="9" coveredstatements="9" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
+        <line num="1" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="11" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="21" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="27" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+      </file>
+      <file name="reducer.js" path="C:\Users\leeli\Codebase\React Native\calculator\src\providers\redux\reducer.js">
+        <metrics statements="45" coveredstatements="45" conditionals="24" coveredconditionals="23" methods="7" coveredmethods="7"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="24" type="stmt"/>
+        <line num="11" count="24" type="stmt"/>
+        <line num="12" count="24" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="16" count="9" type="stmt"/>
+        <line num="17" count="9" type="stmt"/>
+        <line num="18" count="57" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="9" type="stmt"/>
+        <line num="26" count="9" type="stmt"/>
+        <line num="28" count="5" type="stmt"/>
+        <line num="34" count="5" type="stmt"/>
+        <line num="38" count="57" type="stmt"/>
+        <line num="39" count="9" type="stmt"/>
+        <line num="40" count="29" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="5" type="stmt"/>
+        <line num="48" count="5" type="stmt"/>
+        <line num="50" count="5" type="stmt"/>
+        <line num="56" count="5" type="stmt"/>
+        <line num="60" count="9" type="stmt"/>
+        <line num="63" count="4" type="stmt"/>
+        <line num="64" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="68" count="10" type="stmt"/>
+        <line num="71" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="72" count="27" type="cond" truecount="5" falsecount="0"/>
+        <line num="74" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="75" count="1" type="stmt"/>
+        <line num="83" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="87" count="2" type="stmt"/>
+        <line num="91" count="2" type="stmt"/>
+        <line num="101" count="1" type="stmt"/>
+        <line num="105" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="106" count="1" type="stmt"/>
+        <line num="109" count="9" type="stmt"/>
+        <line num="113" count="9" type="stmt"/>
+        <line num="114" count="9" type="stmt"/>
+        <line num="121" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="122" count="1" type="stmt"/>
+        <line num="128" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="129" count="2" type="stmt"/>
+        <line num="135" count="1" type="stmt"/>
+        <line num="140" count="8" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

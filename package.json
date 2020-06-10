@@ -27,6 +27,7 @@
     "jest-enzyme": "^7.1.2",
     "jest-expo": "^37.0.0",
     "logkitty": "^0.7.1",
+    "make-coverage-badge": "^1.2.0",
     "prettier": "^2.0.5",
     "prop-types": "^15.7.2",
     "react-test-renderer": "^16.13.1"
@@ -48,6 +49,9 @@
     ],
     "setupFilesAfterEnv": [
       "<rootDir>/setUp.js"
+    ],
+    "coverageReporters": [
+      "json-summary"
     ]
   },
   "private": true
