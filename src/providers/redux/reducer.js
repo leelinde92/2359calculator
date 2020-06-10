@@ -6,6 +6,22 @@ const initialState = {
   entry: "0",
 };
 
+const evaluateExpression = (expression) => {
+  const evaluations = expression.split(" ");
+  console.log(evaluations);
+  // TODO: Loop through and evaluate multiplications and divisons first
+  // TODO: Loop through and evaluate additions and subtractions
+  return "NaN";
+};
+
+const appendTrailingDecimal = (entry) => {
+  if (entry.charAt(entry.length - 1) === ".") {
+    return `${entry}0`;
+  }
+
+  return entry;
+};
+
 const calculatorReducer = (state = initialState, action) => {
   switch (action.type) {
     case actions.CALCULATOR.EXPRESSION:
@@ -19,10 +35,17 @@ const calculatorReducer = (state = initialState, action) => {
         return state;
       }
 
+      const newExpression = `${appendTrailingDecimal(state.entry)} ${
+        action.payload
+      }`;
+      console.log(newExpression);
       return {
         ...state,
         evaluated: false,
-        expression: `${state.expression} ${state.entry} ${action.payload}`,
+        expression:
+          state.expression === ""
+            ? newExpression
+            : `${state.expression} ${newExpression}`,
         entry: "0",
       };
     case actions.CALCULATOR.CLEAR:
@@ -30,19 +53,22 @@ const calculatorReducer = (state = initialState, action) => {
         ...initialState,
       };
     case actions.CALCULATOR.EVAL:
-      // TODO: Evaluate result from expression.
-      const result = "NaN";
+      const finalExpression = `${state.expression} ${appendTrailingDecimal(
+        state.entry
+      )}`;
+
+      const result = evaluateExpression(finalExpression);
       return {
         ...state,
         evaluated: true,
-        expression: `${state.expression} ${state.entry} =`,
+        expression: `${finalExpression} =`,
         entry: result,
       };
     case actions.CALCULATOR.ENTRY:
       if (state.evaluated) {
         return {
           ...initialState,
-          entry: action.payload,
+          entry: `${action.payload}`,
         };
       }
 

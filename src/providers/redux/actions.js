@@ -8,7 +8,10 @@ export const actions = {
 };
 
 export const calculatorButtonPressed = (button) => {
-  if (typeof button === "number" && button >= 0 && button <= 9) {
+  if (
+    button === "." ||
+    (typeof button === "number" && button >= 0 && button <= 9)
+  ) {
     return {
       type: actions.CALCULATOR.ENTRY,
       payload: button,
@@ -31,5 +34,4 @@ export const calculatorButtonPressed = (button) => {
     type: actions.CALCULATOR.EXPRESSION,
     payload: button,
   };
-  // TODO: Check arithmetic function, and handle it accordingly.
 };
