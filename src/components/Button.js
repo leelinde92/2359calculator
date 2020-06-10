@@ -39,4 +39,4 @@ Button.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
-export default memo(Button);
+export default Button;

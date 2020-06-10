@@ -4,7 +4,6 @@
 import React from "react";
 import { mount } from "enzyme";
 import { Text, Platform } from "react-native";
-import { TouchableHighlight, TouchableNativeFeedback } from "react-native-web";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import Button from "../../src/components/Button";

@@ -1,4 +1,13 @@
 # 2359 Calculator Project
+### How to use this readme
+In the first section, I've detailed the approach I took to this project. You can find the project specifications derived below and the points that have been completed.
+
+### My approach
+- Observe that it's a scientific calculator with arithmetic rules
+- Note that there's no requirement to show statement before evaluation, but show it anyway.
+- Due to size of the feature, not much to do. To demonstrate my understanding of Gitflow workflow, the feature is broken down by individual tasks. Beginning from UI, then tackle business logic.
+- Assume the test includes creating a function for evaluating expressions, not using `eval`.
+
 ### Project specifications
 ##### Requirements
 - [x] Use the latest expo to create the project
@@ -9,12 +18,10 @@
 - [x] Pass given test case `1 + 2 - 3 * 4 = -9`
 
 ##### Bonus points
-- [ ] Each file is less than 60 lines (Reducer exceeds this limit)
+- [ ] Each file is less than 60 lines
 - [x] Use regex
 - [ ] More than 80% test coverage
 
-### My approach
-- Observe that it's a scientific calculator with arithmetic rules
-- Note that there's no requirement to show statement before evaluation, but show it anyway.
-- Due to size of the feature, not much to do. To demonstrate my understanding of Gitflow workflow, the feature is broken down by individual tasks. Beginning from UI, then tackle business logic.
-- Assume the test includes creating a function for evaluating expressions, not using `eval`.
+##### Foot note
+- Reducer is larger than 60 lines, due to the calculations needed.
+- Button has reduced coverage due to platform specific executions.
