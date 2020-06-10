@@ -266,6 +266,26 @@ describe("calculator reducer", () => {
     });
   });
 
+  it("should appending leading 0 when pressing decimal after evaluation", () => {
+    expect(
+      calculatorReducer(
+        {
+          evaluated: true,
+          expression: "900 + 90 =",
+          entry: "998",
+        },
+        {
+          type: actions.CALCULATOR.ENTRY,
+          payload: ".",
+        }
+      )
+    ).toEqual({
+      evaluated: false,
+      expression: "",
+      entry: "0.",
+    });
+  });
+
   describe("evaluation test cases", () => {
     it("1 + 2 - 3 * 4", () => {
       expect(

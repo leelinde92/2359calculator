@@ -129,6 +129,13 @@ const calculatorReducer = (state = initialState, action) => {
       };
     case actions.CALCULATOR.ENTRY:
       if (state.evaluated) {
+        if (action.payload === ".") {
+          return {
+            ...initialState,
+            entry: `0${action.payload}`,
+          };
+        }
+
         return {
           ...initialState,
           entry: `${action.payload}`,
