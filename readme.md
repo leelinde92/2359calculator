@@ -1,6 +1,5 @@
 # 2359 Calculator Project
-[![https://github.com/leelinde92/2359calculator/](https://github.com/leelinde92/2359calculator/raw/develop/coverage/badge.svg)]
-(https://github.com/leelinde92/2359calculator)
+![https://github.com/leelinde92/2359calculator/](https://github.com/leelinde92/2359calculator/raw/master/coverage/badge.svg)
 
 ### How to use this readme
 In the first section, I've detailed the approach I took to this project. You can find the project specifications derived below and the points that have been completed.
