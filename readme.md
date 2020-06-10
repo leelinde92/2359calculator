@@ -8,7 +8,7 @@ In the first section, I've detailed the approach I took to this project. You can
 Enter the command `yarn test --coverage` in the terminal to run tests with coverage. 
 
 ### My approach
-The first thing I observed is the test case resolves based on arithmetic rules. Some basic calculators do not resolve as such, and thus evaluates every new number entered with the previous arithmetic operation, and displays to the user on the screen. I've chosen to show the current math expression created so that the user can check easily. 
+The first thing I observed is that the test case resolves based on arithmetic rules. Some basic calculators do not resolve as such, and thus evaluates every new number entered with the previous arithmetic operation. I've chosen to show the current math expression created so that the user can check easily. 
 
 Due to size of the feature, there isn't much to do. In order to demonstrate my understanding of Agile workflow, I've broken the individual tasks into "features".
  
@@ -16,7 +16,7 @@ As for my understanding of Gitflow workflow, I've created a release branch `rele
 
 Since this is a test to evaluate my abilities, I avoided using the built-in `eval` function and chose to build my own function to resolve arithmetic equations.
 
-Personally, I like to isolate business logic with [Redux Saga](https://redux-saga.js.org/). Sagas can access reducer values, hence relegating actions to take inputs and reducers to storing values. Moreover, the ability to mock certain calls within Sagas and the ability to trigger side effects makes a great case for testing and re-usability.
+Personally, I like to isolate business logic with [Redux Saga](https://redux-saga.js.org/). Sagas can access reducer values, hence relegating actions to take inputs and reducers to storing values. Moreover, the ability to mock certain calls within Sagas and to trigger side effects makes a great case for testing and re-usability.
 
 ### Project specifications
 ##### Requirements
