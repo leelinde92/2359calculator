@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Animated, Easing, Platform, View } from "react-native";
+import { Animated, Easing, Platform, View, SafeAreaView } from "react-native";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import Button from "./src/components/Button";
@@ -35,7 +35,7 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Screen scale={scale} opacity={opacity} />
         <View style={styles.numpad}>
           <View style={styles.buttons}>
@@ -78,7 +78,7 @@ export default function App() {
             </View>
           </View>
         </View>
-      </View>
+      </SafeAreaView>
     </Provider>
   );
 }
