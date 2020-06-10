@@ -286,6 +286,26 @@ describe("calculator reducer", () => {
     });
   });
 
+  it("should append entry and new expression", () => {
+    expect(
+      calculatorReducer(
+        {
+          evaluated: false,
+          expression: "900 +",
+          entry: "90",
+        },
+        {
+          type: actions.CALCULATOR.EXPRESSION,
+          payload: "*",
+        }
+      )
+    ).toEqual({
+      evaluated: false,
+      expression: "900 + 90 *",
+      entry: "0",
+    });
+  });
+
   describe("evaluation test cases", () => {
     it("1 + 2 - 3 * 4", () => {
       expect(
