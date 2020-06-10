@@ -5,7 +5,7 @@ In the first section, I've detailed the approach I took to this project. You can
 ### My approach
 - Observe that it's a scientific calculator with arithmetic rules
 - Note that there's no requirement to show statement before evaluation, but show it anyway.
-- Due to size of the feature, not much to do. To demonstrate my understanding of Gitflow workflow, the feature is broken down by individual tasks. Beginning from UI, then tackle business logic.
+- Due to size of the feature, not much to do. To demonstrate my understanding of Gitflow workflow, I have broken the feature down by individual tasks. Beginning from UI, then tackle business logic.
 - Assume the test includes creating a function for evaluating expressions, not using `eval`.
 
 ### Project specifications
@@ -25,3 +25,4 @@ In the first section, I've detailed the approach I took to this project. You can
 ##### Foot note
 - Reducer is larger than 60 lines, due to the calculations needed.
 - Button has reduced coverage due to platform specific executions.
+- `jest-expo` can cover more platforms, but it does not allow for inflating like `enzyme`. `App.test.js` integration test is deemed as important to keep application integrity and hence I've decided to go with `enzyme` instead.
