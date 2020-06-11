@@ -12,14 +12,15 @@ const store = createStore(calculatorReducer);
 
 export default function App() {
   const useNativeDriver = Platform.OS === "android";
-  const minScale = 0.01;
+  const minScale = 0;
   const maxOpacity = 0.12;
   const [scale] = useState(new Animated.Value(minScale));
-  const [opacity] = useState(new Animated.Value(maxOpacity));
+  const [opacity] = useState(new Animated.Value(0));
 
-  const onRipple = () =>
+  const onRipple = () => {
+    opacity.setValue(maxOpacity);
     Animated.timing(scale, {
-      toValue: 1.4,
+      toValue: 1.6,
       duration: 225,
       easing: Easing.bezier(0.0, 0.0, 0.2, 1),
       useNativeDriver,
@@ -28,10 +29,10 @@ export default function App() {
         toValue: 0,
         useNativeDriver,
       }).start(() => {
-        opacity.setValue(maxOpacity);
         scale.setValue(minScale);
       });
     });
+  };
 
   return (
     <Provider store={store}>
